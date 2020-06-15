@@ -113,6 +113,7 @@ resource "aws_s3_bucket_object" "object1" {
 
 locals {
   s3_origin_id = "S3-${aws_s3_bucket.My_terraformbucket.bucket}"
+  image_url = "${aws_cloudfront_distribution.mycloudfront.domain_name}/${aws_s3_bucket_object.object1.key}"
       }
 
 
@@ -175,7 +176,7 @@ resource "aws_cloudfront_distribution" "mycloudfront" {
    provisioner "remote-exec" {
       inline = [
          "sudo su << EOF",
-         "echo \"<img src='http://${self.domain_name}/${aws_s3_bucket_object.object1.key}' width='800' height='500'>\" >> /var/www/html/image.html",
+         "echo \"<img src='http://${self.domain_name}/${aws_s3_bucket_object.object1.key}' width='800' height='500'>\" >> /var/www/html/ayush.html",
           "EOF"
       ]
     }  
