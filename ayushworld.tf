@@ -113,7 +113,6 @@ resource "aws_s3_bucket_object" "object1" {
 
 locals {
   s3_origin_id = "S3-${aws_s3_bucket.My_terraformbucket.bucket}"
-  image_url = "${aws_cloudfront_distribution.mycloudfront.domain_name}/${aws_s3_bucket_object.object1.key}"
       }
 
 
