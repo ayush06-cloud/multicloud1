@@ -1,4 +1,4 @@
-The code here is to create a small application on aws cloud which is fully operated by terraform :
+The code here is to create a web page on aws cloud which is fully operated by terraform :
 1. Create the key and security group which allow the port 80.
 2. Launch EC2 instance.
 3. In this EC2 instance use the key and security group which we have created in step 1.
